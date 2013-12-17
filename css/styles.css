@@ -1,0 +1,49 @@
+.button {
+    background-color: #66A3D2;
+    border-bottom: 5px solid #3F92D2;
+}
+.button:hover, .button:active {
+    background-color: #3F92D2;
+}
+
+a:link {
+    color: #66A3D2;
+}
+a:visited {
+    color: #0B61A4;
+}
+a:hover, a:active {
+    color: #3F92D2;
+}
+
+header {
+    background-color: #66A3D2;
+    box-shadow: 0px 10px 10px #FFF;
+    height: 300px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+section {
+    padding-top: 10px;
+}
+
+#title {
+    margin-top: 200px;
+}
+#title .subheader {
+    color: #FFF;
+}
+
+#signup {
+    margin-top: 300px;
+    z-index: 0;
+}
+#signup .button {
+    margin-bottom: 0;
+}
+#signup p.subheader{
+    font-size: 14px;
+}
