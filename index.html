@@ -43,13 +43,11 @@
     <section>
         <div class="row">
             <div class="small-12 columns">
-                <nav>
-                    <div data-magellan-expedition="fixed">
-                        <dl class="sub-nav">
-                            <dd data-magellan-arrival="test"><a href="#test">Test</a></dd>
-                            <dd data-magellan-arrival="fall"><a href="#test2">Test</a></dd>
-                        </dl>
-                    </div>
+                <nav data-magellan-expedition="fixed">
+                    <dl class="sub-nav">
+                        <dd data-magellan-arrival="test"><a href="#test">Test</a></dd>
+                        <dd data-magellan-arrival="fall"><a href="#test2">Test</a></dd>
+                    </dl>
                 </nav>
                 <a name="test"></a>
                 <h3 data-magellan-destination="test">Test</h3>
@@ -72,8 +70,6 @@
         $(document).foundation();
         document.addEventListener('scroll',function(){
             var height = $('#signup').height();
-            console.log("HEIGHT" + height);
-            console.log(window.scrollY);
             if (window.scrollY >= height) {
                 $('#header').css({
                     'position':'absolute',

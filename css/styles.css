@@ -47,3 +47,7 @@ section {
 #signup p.subheader{
     font-size: 14px;
 }
+
+nav.fixed, [data-magellan-expedition] {
+    left: auto;
+}
