@@ -7,7 +7,7 @@
     version : '5.0.0',
 
     settings : {
-      active_class: 'active',
+      active_class: 'active-section',
       threshold: 0
     },
 

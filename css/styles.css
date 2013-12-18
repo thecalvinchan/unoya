@@ -50,4 +50,17 @@ section {
 
 nav.fixed, [data-magellan-expedition] {
     left: auto;
+    box-shadow: 0px 10px 10px #FFF;
+}
+
+.sub-nav dd {
+    border-bottom: 2px solid #999;
+    margin: 0px;
+    padding: 0 0.5rem;
+}
+nav.fixed .sub-nav dd.active-section a {
+    color: #000;
+}
+nav.fixed .sub-nav dd.active-section {
+    border-bottom: 2px solid #000;
 }
