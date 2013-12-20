@@ -22,11 +22,9 @@ p, li {
 
 header {
     background-color: #66A3D2;
-    height: 300px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 2;
+}
+#title .subheader {
+    color: #FFF;
 }
 
 section, footer {
@@ -37,24 +35,6 @@ section {
 }
 
 
-#title {
-    margin-top: 200px;
-}
-#title .subheader {
-    color: #FFF;
-}
-
-#signup {
-    margin-top: 300px;
-    z-index: 0;
-}
-#signup .button {
-    margin-bottom: 0;
-}
-#signup p.subheader{
-    font-size: 14px;
-}
-
 footer {
     background-color: #444;
     color: #DDD;
@@ -63,7 +43,7 @@ footer h3 {
     color: #DDD;
 }
 nav.fixed, [data-magellan-expedition] {
-    background-color: inherit;
+    background-color: #444;
 }
 nav.fixed {
     left: auto;
