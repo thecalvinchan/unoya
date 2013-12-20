@@ -1,0 +1,22 @@
+header {
+    background-color: #66A3D2;
+    height: 300px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+#title {
+    margin-top: 200px;
+}
+
+#signup {
+    margin-top: 300px;
+    z-index: 0;
+}
+#signup .button {
+    margin-bottom: 0;
+}
+#signup p.subheader{
+    font-size: 14px;
+}
