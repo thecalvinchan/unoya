@@ -5,6 +5,10 @@
     border-bottom: 5px solid $alternate-color;
 }
 
+p, li {
+    font-weight: $body-font-weight;
+}
+
 #title .subheader {
     color: #FFF;
 }
@@ -15,7 +19,6 @@ section, footer {
 section {
     padding-bottom: 20px;
 }
-
 
 footer {
     background-color: #444;
