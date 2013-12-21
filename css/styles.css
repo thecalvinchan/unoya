@@ -1,10 +1,28 @@
-@import "settings";
-@import "foundation";
-
 .button {
-    border-bottom: 5px solid $alternate-color;
+    background-color: #66A3D2;
+    border-bottom: 5px solid #3F92D2;
+}
+.button:hover, .button:active {
+    background-color: #3F92D2;
 }
 
+a:link {
+    color: #66A3D2;
+}
+a:visited {
+    color: #0B61A4;
+}
+a:hover, a:active {
+    color: #3F92D2;
+}
+
+p, li {
+    font-weight: 300;
+}
+
+header {
+    background-color: #66A3D2;
+}
 #title .subheader {
     color: #FFF;
 }
