@@ -8,4 +8,9 @@ pagesController.main = function() {
   this.render();
 }
 
+pagesController.index = function() {
+  this.title = 'Locomotive';
+  this.render();
+}
+
 module.exports = pagesController;
