@@ -9,20 +9,46 @@ p, li {
     font-weight: $body-font-weight;
 }
 
-#title .subheader {
-    color: #FFF;
+section, footer {
+    padding: 20px 0;
 }
 
-section, footer {
-    padding-top: 20px;
+.top-bar .name h1 a {
+    padding: 0;
 }
-section {
-    padding-bottom: 20px;
+
+#navbar {
+    background-color: $primary-color;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2; 
+}
+#navbar section {
+    padding: 0;
+}
+#post-nav-header {
+    margin-top: 45px;
+    position: relative;
+    z-index: 0;
+}
+#post-nav-header #title {
+    width: auto;
+}
+
+.avatar-thumb {
+    width: 50px;
+    padding: 5px;
+}
+
+#title .subheader {
+    color: #FFF;
 }
 
 footer {
     background-color: #444;
     color: #DDD;
+    padding-bottom: 0;
 }
 footer h3 {
     color: #DDD;

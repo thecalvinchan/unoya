@@ -1,0 +1,10 @@
+@import "settings";
+
+#post-nav-header {
+    height: 255px;
+    background-color: $primary-color;
+}
+#post-nav-header #title {
+    position: absolute;
+    bottom: 10px;
+}

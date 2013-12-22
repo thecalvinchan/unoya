@@ -6,5 +6,7 @@
 // Guide on [routing](http://locomotivejs.org/guide/routing.html) for additional
 // information.
 module.exports = function routes() {
-  this.root('pages#index');
+    this.root('pages#index');
+    this.match('dashboard', { controller: 'pages', action: 'dashboard' }); 
+    this.match('account/userinfo', { controller: 'account', action: 'userinfo' }); 
 }

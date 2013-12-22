@@ -13,4 +13,9 @@ pagesController.index = function() {
   this.render();
 }
 
+pagesController.dashboard = function() {
+  this.title = 'Locomotive';
+  this.render();
+}
+
 module.exports = pagesController;
