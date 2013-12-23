@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 var express = require('express'),
+    exphbs = require('express3-handlebars'),
     mongoStore = require('connect-mongo')(express),
     flash = require('connect-flash'),
     helpers = require('view-helpers'),
@@ -32,7 +33,13 @@ module.exports = function(app, passport, db) {
 
     //Set views path, template engine and default layout
     app.set('views', config.root + '/app/views');
-    app.set('view engine', 'jade');
+    app.engine('.hbs.html', exphbs({
+        defaultLayout:'main',
+        extname:'.hbs.html',
+        layoutsDir:'app/views/layouts/',
+        partialsDir:'app/views/partials/'
+    }));
+    app.set('view engine', '.hbs.html');
 
     //Enable jsonp
     app.enable("jsonp callback");

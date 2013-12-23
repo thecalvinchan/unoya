@@ -9,7 +9,8 @@
         "angular-route": "latest",
         "bootstrap": "2.3.2",
         "angular-bootstrap": "0.7.0",
-        "angular-ui-utils": "0.0.4"
+        "angular-ui-utils": "0.0.4",
+        "foundation": "zurb/bower-foundation"
     },
     "resolutions": {
         "angular": "1.2.5"

@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 
 exports.render = function(req, res) {
-    res.render('index', {
+    res.render('home', {
         user: req.user ? JSON.stringify(req.user) : "null"
     });
 };
