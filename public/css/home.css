@@ -1,0 +1,31 @@
+/* line 3, ../../scss/home.scss */
+header {
+  background-color: #66a3d2;
+  height: 300px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+/* line 12, ../../scss/home.scss */
+#title {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* line 17, ../../scss/home.scss */
+#signup {
+  margin-top: 300px;
+  z-index: 0;
+}
+
+/* line 21, ../../scss/home.scss */
+#signup .button {
+  margin-bottom: 0;
+}
+
+/* line 24, ../../scss/home.scss */
+#signup p.subheader {
+  font-size: 14px;
+}

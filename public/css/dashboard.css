@@ -1,0 +1,38 @@
+/* line 3, ../../scss/dashboard.scss */
+#post-nav-header {
+  height: 255px;
+  background-color: #66a3d2;
+}
+
+/* line 7, ../../scss/dashboard.scss */
+#post-nav-header #title {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* line 12, ../../scss/dashboard.scss */
+#signup {
+  margin-top: 300px;
+  z-index: 0;
+}
+
+/* line 16, ../../scss/dashboard.scss */
+#signup .button {
+  margin-bottom: 0;
+}
+
+/* line 19, ../../scss/dashboard.scss */
+#signup p.subheader {
+  font-size: 14px;
+}
+
+/* line 24, ../../scss/dashboard.scss */
+.dashboard-main h3 {
+  margin-bottom: 20px;
+}
+
+/* line 28, ../../scss/dashboard.scss */
+.dashboard-main h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}

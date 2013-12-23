@@ -72,7 +72,7 @@ exports.create = function(req, res) {
         }
         req.logIn(user, function(err) {
             if (err) return next(err);
-            return res.redirect('/');
+            return res.redirect('/account/userinfo');
         });
     });
 };

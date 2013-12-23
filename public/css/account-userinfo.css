@@ -1,0 +1,11 @@
+/* line 3, ../../scss/account-userinfo.scss */
+#post-nav-header {
+  height: 255px;
+  background-color: #66a3d2;
+}
+
+/* line 7, ../../scss/account-userinfo.scss */
+#post-nav-header #title {
+  position: absolute;
+  bottom: 10px;
+}

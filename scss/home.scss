@@ -1,0 +1,26 @@
+@import "settings";
+
+header {
+    background-color: $primary-color;
+    height: 300px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+#title {
+    position: absolute;
+    bottom: 10px;
+}
+
+#signup {
+    margin-top: 300px;
+    z-index: 0;
+}
+#signup .button {
+    margin-bottom: 0;
+}
+#signup p.subheader{
+    font-size: 14px;
+}

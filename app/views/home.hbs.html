@@ -1,1 +1,103 @@
-<h1>Example App: Home</h1>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation</title>
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="row">
+            <div id="title" class="small-12 medium-12 large-8 columns">
+                <h1 class="subheader">let us think beautifully.</h1>
+            </div>
+        </div>
+    </header>
+    <section id="signup">
+        <div class="row">
+            <div class="small-12 medium-6 large-4 small-centered columns">
+                <h3 class="subheader text-center">New Here?</h3>
+                <form action="/users" method="post">
+                    <input type="email" placeholder="Email" name="email" value="{{user.email}}">
+                    <input type="password" placeholder="Password" name="password">
+                    <input type="password" placeholder="Retype Password">
+                    <button type="submit" class="button expand">Sign Up</button>
+                </form>
+                <p class="subheader text-center">Alternatively, sign up with <a>Facebook</a> or <a>Twitter</a></p>
+                <p class="subheader text-center">Already have an account? <a>Sign In</a></p>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <section>
+        <div class="row">
+            <div class="small-12 columns">
+                <h2>Bob Dyrdreak <small>Featured Unoyan</small></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-4 large-3 columns">
+                <img src="/img/test-pic.jpg">
+            </div>
+            <div class="small-12 medium-8 large-9 columns">
+                <br><br>
+                <p>This is a description about Bob. What is his condition? When was he diagnosed and how is he now? How is his family reacting?</p>
+                <p>This is a description about Bob's goal or dream. What are his aspirations? Perhaps he wants to meet his favorite author, or just drive an italian supercar. These are dreams that many of us can connect with.</p>
+                <div class="row">
+                    <div class="small-12 large-4 columns">
+                        <p><button class="button expand">Help Bob</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="small-12 large-3 columns">
+                <nav data-magellan-expedition="fixed">
+                    <dl class="sub-nav">
+                        <dd data-magellan-arrival="unoya"><a href="#unoya">Who are we?</a></dd>
+                        <dd data-magellan-arrival="how"><a href="#how">How this works.</a></dd>
+                        <dd data-magellan-arrival="help"><a href="#help">How can I help?</a></dd>
+                    </dl>
+                </nav>
+            </div>
+            <div class="small-12 large-9 columns">
+                <a name="unoya"></a>
+                <h3 data-magellan-destination="unoya">Who are we?</h3>
+                <p>Eunoia (pronounced unoya) comes from the greek word εὔνοια, which means <em>beautiful thinking</em> or <em>a well mind</em>. When diagnosed with cancer, many patients lose their sense of purpose and feel disengaged with life itself. We're here to show them that life can be beautiful, even with cancer. Unoya was founded under the belief that living with an illness should not hinder or detract from the quality of one's life. Given the recent popularity of crowd-sourcing platforms, we know that social media can be used to support those diagnosed with cancer and help them achieve their dreams.</p>
+                <a name="how"></a>
+                <h3 data-magellan-destination="how">How this works.</h3>
+                <p>Unoya is a crowd-sourcing platform for cancer patients. Social connections are used to help cancer patients achieve their goals and aspirations. Although donations can be made through Unoya, the main focus of Unoya is to utilize social media to increase awareness and generate support for patients and families affected by cancer. Join us at Unoya, and share these stories with the rest of the world.</p>
+                <a name="help"></a>
+                <h3 data-magellan-destination="help">How can I help?</h3>
+                <p>Every month, we will feature one cancer patient with a unique dream or goal. If you can help this person in any way, perfect! If not, then share his/her story with the rest of the world, either through Twitter, Facebook, or some other online social medium. By garnering social attention, Unoya aims to find a person or a group of people who can help fulfill the dreams of patients and show them how to think beauitfully.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <ul class="inline-list right">
+                    <li>Unoya &copy; 2013</li>
+                </ul>
+                <ul class="inline-list left">
+                    <li>About</li>
+                    <li>Start a Campaign</li>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

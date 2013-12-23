@@ -12,7 +12,10 @@ var mongoose = require('mongoose'),
  */
 var UserSchema = new Schema({
     name: String,
-    email: String,
+    email: {
+        type: String,
+        unique: true
+    },
     username: {
         type: String,
         unique: true
@@ -45,11 +48,11 @@ var validatePresenceOf = function(value) {
 };
 
 // the below 4 validations only apply if you are signing up traditionally
-UserSchema.path('name').validate(function(name) {
-    // if you are authenticating by any of the oauth strategies, don't validate
-    if (authTypes.indexOf(this.provider) !== -1) return true;
-    return name.length;
-}, 'Name cannot be blank');
+//UserSchema.path('name').validate(function(name) {
+//    // if you are authenticating by any of the oauth strategies, don't validate
+//    if (authTypes.indexOf(this.provider) !== -1) return true;
+//    return name.length;
+//}, 'Name cannot be blank');
 
 UserSchema.path('email').validate(function(email) {
     // if you are authenticating by any of the oauth strategies, don't validate
@@ -60,6 +63,9 @@ UserSchema.path('email').validate(function(email) {
 UserSchema.path('username').validate(function(username) {
     // if you are authenticating by any of the oauth strategies, don't validate
     if (authTypes.indexOf(this.provider) !== -1) return true;
+    if (!username.length) {
+        return true;
+    }
     return username.length;
 }, 'Username cannot be blank');
 
@@ -80,6 +86,11 @@ UserSchema.pre('save', function(next) {
         next(new Error('Invalid password'));
     else
         next();
+});
+UserSchema.pre('save', function(next) {
+    if (!this.username)
+        this.username = this.email;
+    next();
 });
 
 /**

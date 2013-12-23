@@ -1,0 +1,95 @@
+@import "settings";
+@import "foundation";
+
+.button {
+    border-bottom: 5px solid $alternate-color;
+}
+
+p, li {
+    font-weight: $body-font-weight;
+}
+
+section, footer {
+    padding: 20px 0;
+}
+
+.top-bar .name h1 a {
+    padding: 0;
+}
+
+#navbar {
+    background-color: $primary-color;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2; 
+}
+#navbar section {
+    padding: 0;
+}
+#post-nav-header {
+    margin-top: 45px;
+    position: relative;
+    z-index: 0;
+}
+#post-nav-header #title {
+    width: auto;
+}
+
+.avatar-thumb {
+    width: 50px;
+    padding: 5px;
+}
+
+#title .subheader {
+    color: #FFF;
+}
+
+footer {
+    background-color: #444;
+    color: #DDD;
+    padding-bottom: 0;
+}
+footer h3 {
+    color: #DDD;
+}
+nav.fixed, [data-magellan-expedition] {
+    background-color: #444;
+}
+nav.fixed {
+    left: auto;
+}
+.sub-nav dd {
+    margin: 0px;
+    padding: 0 0.5rem;
+    border-bottom: 2px solid #888;
+}
+.sub-nav dd a:link, .sub-nav dd a:visited {
+    color: #888;
+}
+.sub-nav dd a:hover, .sub-nav dd a:active {
+    color: #DDD;
+}
+.sub-nav dd.active-section {
+    border-bottom: 2px solid #DDD;
+}
+.sub-nav dd.active-section a:link, .sub-nav dd.active-section a:visited {
+    color: #DDD;
+}
+
+@media only screen and (min-width: 64.063em) {
+    nav.fixed {
+        min-width: 0;
+        width: auto;
+    }
+    .sub-nav dd {
+        border-bottom: none;
+        border-left: 2px solid #888;
+        display: block;
+        float: none;
+    }
+    .sub-nav dd.active-section {
+        border-bottom: none;
+        border-left: 2px solid #DDD;
+    }
+}

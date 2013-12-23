@@ -1,11 +1,13 @@
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    User = mongoose.model('User');
 
 
 exports.render = function(req, res) {
     res.render('home', {
-        user: req.user ? JSON.stringify(req.user) : "null"
+        user: req.user ? req.user : new User(),
+        layout: false
     });
 };
