@@ -1,5 +1,0 @@
-/public/bower_components/*
-/public/.sass-cache/*
-*.DS_Store
-/public/stylesheets/*
-/node_modules/*
