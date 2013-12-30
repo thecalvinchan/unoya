@@ -17,7 +17,7 @@ exports.authCallback = function(req, res, next) {
 exports.signin = function(req, res) {
     res.render('users/signin', {
         title: 'Signin',
-        message: req.flash('error')
+        message: req.flash('auth-error')
     });
 };
 
@@ -43,7 +43,7 @@ exports.signout = function(req, res) {
  * Session
  */
 exports.session = function(req, res) {
-    res.redirect('/account/userinfo');
+    res.redirect('/account/dashboard');
 };
 
 /**
@@ -74,6 +74,39 @@ exports.create = function(req, res) {
             if (err) return next(err);
             return res.redirect('/account/userinfo');
         });
+    });
+};
+
+/**
+ * Update User
+ */
+exports.update = function(req, res) {
+    var user = req.user;
+    console.log(user);
+    var query = {
+        _id: user.id
+    };
+    var update = { $set: {
+        f_name: req.body.f_name,
+        l_name: req.body.l_name,
+        email: req.body.email
+    }};
+    var option = {
+        multi: false
+    };
+    User.update(query,update,option,function(err) {
+        if (err) {
+            switch(err.code){
+                case 11000:
+                case 11001:
+                    message = 'Username already exists';
+                    break;
+                default: 
+                    message = 'Please fill all the required fields';
+            }
+        }
+        message = 'Account information updated.';
+        return res.redirect('/account/userinfo');
     });
 };
 

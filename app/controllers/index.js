@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 
 exports.render = function(req, res) {
     if (req.user)
-        res.redirect('/account/userinfo');
+        res.redirect('/account/dashboard');
     res.render('home', {
         user: req.user ? req.user : new User(),
         layout: false

@@ -3,7 +3,8 @@
  */
 exports.requiresLogin = function(req, res, next) {
     if (!req.isAuthenticated()) {
-        return res.send(401, 'User is not authorized');
+        req.flash('auth-error','You must be logged in to do that!');
+        return res.redirect('/signin');
     }
     next();
 };

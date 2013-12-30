@@ -1,15 +1,15 @@
     <section class="dashboard-main">
             <div class="row">
                     <div class="small-12 large-8 columns">
-                    <form>
+                    <form action="/user" method="post">
                         <div class="row">
                             <div class="small-12 medium-6 columns">
                                 <label>First Name</label>
-                                <input type="text">
+                                <input type="text" name="f_name" value="{{user.f_name}}">
                             </div>
                             <div class="small-12 medium-6 columns">
                                 <label>Last Name</label>
-                                <input type="text">
+                                <input type="text" name="l_name" value="{{user.l_name}}">
                             </div>
                             <div class="small-12 columns">
                                 <label>Email Address</label>
@@ -19,25 +19,7 @@
                                 <label>Username</label>
                                 <input type="text" name="username" value="{{user.username}}">
                             </div>
-                            <div class="small-12 medium-6 columns">
-                                <label>Date of Birth</label>
-                                <div class="row">
-                                    <div class="small-4 columns">
-                                        <select>
-                                            <option>Month</option>
-                                        </select>
-                                    </div>
-                                    <div class="small-4 columns">
-                                        <select>
-                                            <option>Date</option>
-                                        </select>
-                                    </div>
-                                    <div class="small-4 columns">
-                                        <select>
-                                            <option>Year</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            <div class="hide-for-small medium-6 columns">
                             </div>
                         </div>
                         <div class="row">

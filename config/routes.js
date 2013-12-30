@@ -8,6 +8,7 @@ module.exports = function(app, passport, auth) {
 
     //Setting up the users api
     app.post('/users', users.create);
+    app.post('/user', users.update);
 
     //Setting the local strategy route
     app.post('/users/session', passport.authenticate('local', {
@@ -76,6 +77,8 @@ module.exports = function(app, passport, auth) {
 
     //Account routes
     var account = require('../app/controllers/account');
-    app.get('/account/userinfo', account.userinfo);
+    var auth = require('./middlewares/authorization');
+    app.get('/account/userinfo', auth.requiresLogin, account.userinfo);
+    app.get('/account/dashboard', auth.requiresLogin, account.dashboard);
 
 };

@@ -7,6 +7,8 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User'),
     config = require('./config');
 
+console.log(config.facebook.clientID);
+
 
 module.exports = function(passport) {
     //Serialize sessions
@@ -95,6 +97,8 @@ module.exports = function(passport) {
                 }
                 if (!user) {
                     user = new User({
+                        f_name: profile.name.givenName,
+                        l_name: profile.name.familyName,
                         name: profile.displayName,
                         email: profile.emails[0].value,
                         username: profile.username,

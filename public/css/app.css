@@ -7704,27 +7704,27 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/* line 3, ../../scss/app.scss */
+/* line 5, ../../scss/app.scss */
 .button {
   border-bottom: 5px solid #3f92d2;
 }
 
-/* line 7, ../../scss/app.scss */
+/* line 9, ../../scss/app.scss */
 p, li {
   font-weight: 300;
 }
 
-/* line 11, ../../scss/app.scss */
+/* line 13, ../../scss/app.scss */
 section, footer {
   padding: 20px 0;
 }
 
-/* line 15, ../../scss/app.scss */
+/* line 17, ../../scss/app.scss */
 .top-bar .name h1 a {
   padding: 0;
 }
 
-/* line 19, ../../scss/app.scss */
+/* line 21, ../../scss/app.scss */
 #navbar {
   background-color: #66a3d2;
   position: fixed;
@@ -7733,91 +7733,96 @@ section, footer {
   z-index: 2;
 }
 
-/* line 26, ../../scss/app.scss */
+/* line 28, ../../scss/app.scss */
 #navbar section {
   padding: 0;
 }
 
-/* line 29, ../../scss/app.scss */
+/* line 31, ../../scss/app.scss */
 #post-nav-header {
   margin-top: 45px;
   position: relative;
   z-index: 0;
 }
 
-/* line 34, ../../scss/app.scss */
+/* line 36, ../../scss/app.scss */
 #post-nav-header #title {
   width: auto;
 }
 
-/* line 38, ../../scss/app.scss */
+/* line 39, ../../scss/app.scss */
+#post-nav-header h2 {
+  color: #FFF;
+}
+
+/* line 43, ../../scss/app.scss */
 .avatar-thumb {
   width: 50px;
   padding: 5px;
 }
 
-/* line 43, ../../scss/app.scss */
+/* line 48, ../../scss/app.scss */
 #title .subheader {
   color: #FFF;
 }
 
-/* line 47, ../../scss/app.scss */
+/* line 52, ../../scss/app.scss */
 footer {
   background-color: #444;
   color: #DDD;
   padding-bottom: 0;
 }
 
-/* line 52, ../../scss/app.scss */
+/* line 57, ../../scss/app.scss */
 footer h3 {
   color: #DDD;
 }
 
-/* line 55, ../../scss/app.scss */
+/* line 61, ../../scss/app.scss */
 nav.fixed, [data-magellan-expedition] {
   background-color: #444;
 }
 
-/* line 58, ../../scss/app.scss */
+/* line 64, ../../scss/app.scss */
 nav.fixed {
   left: auto;
 }
 
-/* line 61, ../../scss/app.scss */
+/* line 67, ../../scss/app.scss */
 .sub-nav dd {
   margin: 0px;
   padding: 0 0.5rem;
   border-bottom: 2px solid #888;
 }
 
-/* line 66, ../../scss/app.scss */
+/* line 72, ../../scss/app.scss */
 .sub-nav dd a:link, .sub-nav dd a:visited {
   color: #888;
 }
 
-/* line 69, ../../scss/app.scss */
+/* line 75, ../../scss/app.scss */
 .sub-nav dd a:hover, .sub-nav dd a:active {
   color: #DDD;
 }
 
-/* line 72, ../../scss/app.scss */
+/* line 78, ../../scss/app.scss */
 .sub-nav dd.active-section {
   border-bottom: 2px solid #DDD;
 }
 
-/* line 75, ../../scss/app.scss */
+/* line 81, ../../scss/app.scss */
 .sub-nav dd.active-section a:link, .sub-nav dd.active-section a:visited {
   color: #DDD;
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 80, ../../scss/app.scss */
+  /* line 86, ../../scss/app.scss */
   nav.fixed {
     min-width: 0;
     width: auto;
   }
 
-  /* line 84, ../../scss/app.scss */
+  /* line 90, ../../scss/app.scss */
   .sub-nav dd {
     border-bottom: none;
     border-left: 2px solid #888;
@@ -7825,7 +7830,7 @@ nav.fixed {
     float: none;
   }
 
-  /* line 90, ../../scss/app.scss */
+  /* line 96, ../../scss/app.scss */
   .sub-nav dd.active-section {
     border-bottom: none;
     border-left: 2px solid #DDD;

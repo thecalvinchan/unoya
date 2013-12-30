@@ -1,5 +1,6 @@
 @import "settings";
 @import "foundation";
+@import "compass/layout/sticky-footer";
 
 .button {
     border-bottom: 5px solid $alternate-color;
@@ -35,6 +36,9 @@ section, footer {
 #post-nav-header #title {
     width: auto;
 }
+#post-nav-header h2 {
+    color: #FFF;
+}
 
 .avatar-thumb {
     width: 50px;
@@ -53,6 +57,7 @@ footer {
 footer h3 {
     color: #DDD;
 }
+
 nav.fixed, [data-magellan-expedition] {
     background-color: #444;
 }
