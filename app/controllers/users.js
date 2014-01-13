@@ -89,7 +89,8 @@ exports.update = function(req, res) {
     var update = { $set: {
         f_name: req.body.f_name,
         l_name: req.body.l_name,
-        email: req.body.email
+        email: req.body.email,
+        username: req.body.username
     }};
     var option = {
         multi: false

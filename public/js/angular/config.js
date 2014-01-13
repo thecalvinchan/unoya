@@ -1,10 +1,17 @@
 //Setting up route
-angular.module('mean').config(['$routeProvider',
+angular.module('unoya').config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/articles', {
-            templateUrl: 'views/articles/list.html'
+        when('/signin', {
+            templateUrl: 'views/signin.html'
         }).
+        when('/', {
+            templateUrl: 'views/index.html'
+        }).
+        otherwise({
+            redirectTo: '/'
+        });
+        /**
         when('/articles/create', {
             templateUrl: 'views/articles/create.html'
         }).
@@ -20,11 +27,12 @@ angular.module('mean').config(['$routeProvider',
         otherwise({
             redirectTo: '/'
         });
+        **/
     }
 ]);
 
 //Setting HTML5 Location Mode
-angular.module('mean').config(['$locationProvider',
+angular.module('unoya').config(['$locationProvider',
     function($locationProvider) {
         $locationProvider.hashPrefix("!");
     }

@@ -6,6 +6,11 @@
     <title>Foundation</title>
     <link rel="stylesheet" href="/css/app.css" />
     <link rel="stylesheet" href="/css/home.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="/js/angular/init.js"></script>
+    <script src="/js/angular/app.js"></script>
+    <script src="/js/angular/config.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
@@ -16,22 +21,9 @@
             </div>
         </div>
     </header>
-    <section id="signup">
-        <div class="row">
-            <div class="small-12 medium-6 large-4 small-centered columns">
-                <h3 class="subheader text-center">New Here?</h3>
-                <form action="/users" method="post">
-                    <input type="email" placeholder="Email" name="email" value="{{user.email}}">
-                    <input type="password" placeholder="Password" name="password">
-                    <input type="password" placeholder="Retype Password">
-                    <button type="submit" class="button expand">Sign Up</button>
-                </form>
-                <p class="subheader text-center">Alternatively, sign up with <a href="/auth/facebook">Facebook</a> or <a>Twitter</a></p>
-                <p class="subheader text-center">Already have an account? <a href="/signin">Sign In</a></p>
-            </div>
-        </div>
-        <hr>
+    <section id="signup" ng-view>
     </section>
+    </div>
 
     <section>
         <div class="row">
