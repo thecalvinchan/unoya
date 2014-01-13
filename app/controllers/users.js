@@ -11,40 +11,6 @@ exports.authCallback = function(req, res, next) {
     res.redirect('/');
 };
 
-/**
- * Show login form
- */
-exports.signin = function(req, res) {
-    res.render('users/signin', {
-        title: 'Signin',
-        message: req.flash('auth-error')
-    });
-};
-
-/**
- * Show sign up form
- */
-exports.signup = function(req, res) {
-    res.render('users/signup', {
-        title: 'Sign up',
-        user: new User()
-    });
-};
-
-/**
- * Logout
- */
-exports.signout = function(req, res) {
-    req.logout();
-    res.redirect('/');
-};
-
-/**
- * Session
- */
-exports.session = function(req, res) {
-    res.redirect('/account/dashboard');
-};
 
 /**
  * Create user
@@ -55,59 +21,21 @@ exports.create = function(req, res) {
 
     user.provider = 'local';
     user.save(function(err) {
+        console.log(err);
         if (err) {
             switch(err.code){
                 case 11000:
                 case 11001:
-                    message = 'Username already exists';
+                    message = 'Email already exists';
                     break;
                 default: 
                     message = 'Please fill all the required fields';
             }
-
-            return res.render('users/signup', {
-                message: message,
-                user: user
+            return res.send(400,{
+                error: message
             });
         }
-        req.logIn(user, function(err) {
-            if (err) return next(err);
-            return res.redirect('/account/userinfo');
-        });
-    });
-};
-
-/**
- * Update User
- */
-exports.update = function(req, res) {
-    var user = req.user;
-    console.log(user);
-    var query = {
-        _id: user.id
-    };
-    var update = { $set: {
-        f_name: req.body.f_name,
-        l_name: req.body.l_name,
-        email: req.body.email,
-        username: req.body.username
-    }};
-    var option = {
-        multi: false
-    };
-    User.update(query,update,option,function(err) {
-        if (err) {
-            switch(err.code){
-                case 11000:
-                case 11001:
-                    message = 'Username already exists';
-                    break;
-                default: 
-                    message = 'Please fill all the required fields';
-            }
-        }
-        message = 'Account information updated.';
-        return res.redirect('/account/userinfo');
+        return res.jsonp(user);
     });
 };
 
