@@ -1,5 +1,5 @@
 module.exports = {
-    db: "mongodb://calvin.chan.h@gmail.com:uclajyadm1994@alex.mongohq.com:10070/app21209922",
+    db: process.env.MONGOHQ_URL,
     app: {
         name: "Unoya"
     },
