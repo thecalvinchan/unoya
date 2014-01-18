@@ -10,7 +10,6 @@ var mongoose = require('mongoose'),
 
 console.log(config.facebook.clientID);
 
-
 module.exports = function(passport) {
     //Serialize sessions
     passport.serializeUser(function(user, done) {
