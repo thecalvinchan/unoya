@@ -3,13 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation</title>
+    <title>Unoya - Let us Live Beautifully</title>
+    <link rel="shortcut icon" type="image/ico" href="/img/icons/favicon.ico" />
     <link rel="stylesheet" href="/css/app.css" />
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link rel="stylesheet" href="/css/campaigns.css" />
     <script src="/bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '519672091465468',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <nav id="navbar">
         <div class="row">
             <div class="small-12 columns">
@@ -27,8 +46,8 @@
                             <li class="has-dropdown">
                                 <a>{{user.username}}</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#settings">Edit Profile</a></li>
+                                    <li><a href="/account">Dashboard</a></li>
+                                    <li><a href="/account/#/settings">Edit Profile</a></li>
                                     <li class="divider"></li>
                                     <li><a href="/signout">Log Out</a></li>
                                 </ul>
