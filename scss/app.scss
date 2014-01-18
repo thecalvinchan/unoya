@@ -18,6 +18,10 @@ section, footer {
     padding: 0;
 }
 
+.ng-view {
+    padding: 0;
+}
+
 #navbar {
     background-color: $primary-color;
     position: fixed;

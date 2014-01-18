@@ -1,12 +1,12 @@
 //Setting up route
-angular.module('unoya').config(['$routeProvider',
+angular.module('unoya.public').config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/signin', {
-            templateUrl: 'views/signin.html'
+            templateUrl: '/views/signin.html'
         }).
         when('/', {
-            templateUrl: 'views/index.html'
+            templateUrl: '/views/index.html'
         }).
         otherwise({
             redirectTo: '/'
@@ -31,9 +31,25 @@ angular.module('unoya').config(['$routeProvider',
     }
 ]);
 
+angular.module('unoya.user').config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+        when('/settings', {
+            templateUrl: '/views/user/settings.html'
+        }).
+        when('/account', {
+            templateUrl: '/views/user/dashboard.html'
+        }).
+        otherwise({
+            redirectTo: '/account'
+        });
+    }
+]);
+
 //Setting HTML5 Location Mode
-angular.module('unoya').config(['$locationProvider',
+angular.module('unoya.public').config(['$locationProvider',
     function($locationProvider) {
+        $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix("!");
     }
 ]);

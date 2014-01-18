@@ -1,7 +1,7 @@
 module.exports = function(app, passport, auth) {
     //User Routes
     var users = require('../app/controllers/users');
-    app.get('/signin', users.signin);
+    //app.get('/signin', users.signin);
     app.get('/signup', users.signup);
     app.get('/signout', users.signout);
     app.get('/users/me', users.me);
@@ -74,11 +74,12 @@ module.exports = function(app, passport, auth) {
     //Home route
     var index = require('../app/controllers/index');
     app.get('/', index.render);
+    app.get('/signin', index.render);
 
     //Account routes
-    var account = require('../app/controllers/account');
+    var user = require('../app/controllers/user');
     var auth = require('./middlewares/authorization');
-    app.get('/account/userinfo', auth.requiresLogin, account.userinfo);
-    app.get('/account/dashboard', auth.requiresLogin, account.dashboard);
-
+    app.get('/account', auth.requiresLogin, user.index);
+    app.get('/account/dashboard', auth.requiresLogin, user.index);
+    app.get('/account/userinfo', auth.requiresLogin, user.index);
 };
