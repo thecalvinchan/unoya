@@ -52,6 +52,9 @@ angular.module('unoya.discover').config(['$routeProvider',
         when('/campaigns', {
             templateUrl: '/views/discover/campaigns.html'
         }).
+        when('/campaign/:campaignId', {
+            templateUrl: '/views/discover/campaign.html'
+        }).
         when('/', {
             templateUrl: '/views/discover/campaigns.html'
         }).

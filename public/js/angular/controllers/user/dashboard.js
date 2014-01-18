@@ -1,9 +1,9 @@
 angular.module('unoya.user').controller('DashboardController', ['$scope', '$location', 'User',
     function ($scope, $location, User) {
         $scope.title = 'Dashboard';
-        $scope.subtitle = 'Hello World';
         User.get(function(user){
             $scope.user = user;
+            $scope.subtitle = 'Welcome back, ' + user.f_name + '!';
         });
         $scope.activities = [
             {

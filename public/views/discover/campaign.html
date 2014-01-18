@@ -1,0 +1,84 @@
+<div class="dashboard-main" data-ng-controller="CampaignController">
+
+    <header id="post-nav-header">
+        <div class="row">
+            <div id="title" class="small-12 columns">
+                <h2>{{title}}</h2>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard-main">
+        <div class="row">
+            <div class="small-12 medium-4 large-3 large-push-9 medium-push-8 columns">
+                    <div>
+                        <img src="{{campaign._creator.picture}}">
+                    </div>
+                    <br>  
+                    <section data-alert class="alert-box text-center {{message.type}}" ng-if="message">
+                        {{message.description}}
+                    </section>
+                    <a class="button expand" ng-click="follow()" ng-if="!following">Follow {{campaign._creator.f_name}}'s Campaign</a>
+                    <ul class="pricing-table">
+                        <li class="title">Stats</li>
+                        <li class="description">Diagnosis</li>
+                        <li class="bullet-item">{{campaign.diagnosis}}</li>
+                        <li class="description">Total Followers</li>
+                        <li class="price">{{campaign._followers.length}}</li>
+                        <li class="description">Donations to Date</li>
+                        <li class="price">{{campaign.donations}}</li>
+                    </ul>
+            </div>
+            <div class="small-12 medium-8 large-9 large-pull-3 medium-pull-4 columns">
+                <h1>{{name}} <small>is fighting against {{campaign.diagnosis}}.</small></h1>
+                <h3 class="subheader" ng-bind-html="campaign.full_desc"></h3>
+                <div class="flex-video">
+                    <iframe width="560" height="315" src="//www.youtube.com/embed/zbkinvcaqUg" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="row call-to-action">
+                    <div class="small-12 medium-6 large-4 columns">
+                        <div class="panel text-center">
+                            <p>Share {{campaign._creator.f_name}}'s story.</p>
+                            <a class="button expand">Share</a>
+                            <a class="button expand">Tweet</a>
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-4 columns">
+                        <div class="panel text-center">
+                            <p>Make a small donation.</p>
+                            <a class="button expand">Donate $5</a>
+                            <a class="button expand">Donate $10</a>
+                        </div>
+                    </div>
+                    <div class="small-12 large-4 columns">
+                        <div class="panel text-center">
+                            <p>Make a custom donation.</p>
+                            <div class="row">
+                                <div class="small-8 large-12 columns">
+                                    <div class="row collapse">
+                                        <div class="small-9 columns">
+                                            <input type="number" placeholder="10">
+                                        </div>
+                                        <div class="small-3 columns">
+                                            <span class="postfix">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-4 large-12 columns">
+                                    <a class="button expand">Donate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <article>
+                    <h2>About {{name}}</h2>
+                    <div ng-bind-html="content">
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</div>

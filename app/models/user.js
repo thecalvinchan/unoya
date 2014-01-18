@@ -22,8 +22,9 @@ var UserSchema = new Schema({
         unique: true
     },
     picture: String, 
-    campaigns: [{
+    following: [{
         type: Schema.ObjectId,
+        unique: true,
         ref: 'Campaign'
     }],
     hashed_password: String,

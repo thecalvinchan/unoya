@@ -43,7 +43,7 @@ ArticleSchema.path('title').validate(function(title) {
 ArticleSchema.statics.load = function(id, cb) {
     this.findOne({
         _id: id
-    }).populate('user', 'name username').exec(cb);
+    }).populate('user', 'f_name l_name').exec(cb);
 };
 
 mongoose.model('Article', ArticleSchema);

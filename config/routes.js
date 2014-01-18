@@ -65,6 +65,7 @@ module.exports = function(app, passport, auth) {
     app.get('/campaigns', campaigns.all);
     app.post('/campaigns', auth.requiresLogin, campaigns.create);
     app.get('/campaigns/:campaignId', campaigns.show);
+    app.post('/following/campaigns/:campaignId', auth.requiresLogin, campaigns.follow);
     app.put('/campaigns/:campaignId', auth.requiresLogin, auth.campaign.hasAuthorization, campaigns.update);
     app.del('/campaigns/:campaignId', auth.requiresLogin, auth.campaign.hasAuthorization, campaigns.destroy);
 

@@ -6,6 +6,11 @@ angular.module('unoya.discover').factory("Campaigns", ['$resource', function($re
     });
     campaigns.one = $resource('campaigns/:campaignId', {
         campaignId: '@_id'
+    }, {
+        follow : {
+            method : 'POST',
+            url : 'following/campaigns/:campaignId'
+        }
     });
     return campaigns;
 }]);

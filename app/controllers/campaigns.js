@@ -37,6 +37,22 @@ exports.create = function(req, res) {
     });
 };
 
+exports.follow = function(req, res) {
+    var campaign = req.campaign;
+    campaign = _.extend(campaign, req.body);
+    console.log(campaign);
+    req.user.following.push(campaign._id);
+    console.log(req.user);
+    campaign.save(function(err) {
+        if (err) {
+            return res.send(400, {
+                error: "Error while following"
+            });
+        }
+        res.jsonp(campaign);
+    });
+};
+
 /**
  * Update a article
  */

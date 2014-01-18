@@ -13,7 +13,16 @@ var CampaignSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    _creator: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
     title: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    diagnosis: {
         type: String,
         default: '',
         trim: true
@@ -23,22 +32,24 @@ var CampaignSchema = new Schema({
         default: '',
         trim: true
     },
-    _creator: {
-        type: Schema.ObjectId,
-        ref: 'User'
-    },
     _followers: [{
         type: Schema.ObjectId,
+        unique: true,
         ref: 'User'
     }],
     short_desc: {
         type: String,
         default: '',
+        trim: true
     },
     full_desc: {
         type: String,
         default: '',
         trim: true
+    },
+    donations: {
+        type: Number,
+        default: 0,
     }
 });
 
@@ -56,8 +67,8 @@ CampaignSchema.statics.load = function(id, callback) {
     this.findOne({
         _id: id
     }).
-    populate('_creator', 'name ').
-    populate('_followers','name').
+    populate('_creator', 'f_name l_name username picture').
+    populate('_followers','f_name l_name username').
     exec(callback);
 };
 
