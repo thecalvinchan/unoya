@@ -46,6 +46,21 @@ angular.module('unoya.user').config(['$routeProvider',
     }
 ]);
 
+angular.module('unoya.discover').config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+        when('/campaigns', {
+            templateUrl: '/views/discover/campaigns.html'
+        }).
+        when('/', {
+            templateUrl: '/views/discover/campaigns.html'
+        }).
+        otherwise({
+            redirectTo: '/'
+        });
+    }
+]);
+
 //Setting HTML5 Location Mode
 angular.module('unoya.public').config(['$locationProvider',
     function($locationProvider) {

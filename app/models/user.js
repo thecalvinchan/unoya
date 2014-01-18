@@ -21,6 +21,11 @@ var UserSchema = new Schema({
         type: String,
         unique: true
     },
+    picture: String, 
+    campaigns: [{
+        type: Schema.ObjectId,
+        ref: 'Campaign'
+    }],
     hashed_password: String,
     provider: String,
     salt: String,

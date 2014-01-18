@@ -1,11 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en" ng-app="unoya.user">
+<html class="no-js" lang="en" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation</title>
     <link rel="stylesheet" href="/css/app.css" />
     <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/campaigns.css" />
     <script src="/bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
@@ -22,7 +23,7 @@
                     {{#if user}}
                     <section class="top-bar-section">
                         <ul class="right">
-                            <li class="avatar-thumb"><img src="/img/test-pic.jpg"></li>
+                            <li class="avatar-thumb"><img src="{{user.picture}}"></li>
                             <li class="has-dropdown">
                                 <a>{{user.username}}</a>
                                 <ul class="dropdown">
@@ -73,7 +74,10 @@
     <script src="/js/angular/app.js"></script>
     <script src="/js/angular/config.js"></script>
     <script src="/js/angular/services/user.js"></script>
+    <script src="/js/angular/services/campaigns.js"></script>
     <script src="/js/angular/controllers/user/dashboard.js"></script>
     <script src="/js/angular/controllers/user/settings.js"></script>
+    <script src="/js/angular/controllers/discover/campaigns.js"></script>
+    <script src="/js/angular/controllers/discover/campaign.js"></script>
 </body>
 </html>

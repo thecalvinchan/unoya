@@ -1,9 +1,9 @@
 document.addEventListener('scroll',function(){
     var height = $('#post-nav-header').height();
-    if (window.scrollY >= height+1) {
+    if (window.scrollY >= height-10) {
         $('#navbar').css({
             'position':'absolute',
-            'top':height-45
+            'top':height-55
         });
     } else {
         $('#navbar').css({

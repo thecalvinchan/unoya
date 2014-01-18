@@ -28,9 +28,14 @@ section, footer {
     top: 0;
     width: 100%;
     z-index: 2; 
+    padding: 5px 0;
 }
 #navbar section {
     padding: 0;
+}
+ul.title-area {
+    position: relative;
+    bottom: 5px;
 }
 #post-nav-header {
     margin-top: 45px;
@@ -45,8 +50,18 @@ section, footer {
 }
 
 .avatar-thumb {
-    width: 50px;
-    padding: 5px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    background-color: inherit;
+}
+
+.avatar-thumb img {
+    width: 40px;
+}
+
+.avatar-full img {
+    max-width: 100%;
 }
 
 #title .subheader {

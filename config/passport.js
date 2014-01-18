@@ -98,6 +98,7 @@ module.exports = function(passport) {
                     return done(err);
                 }
                 if (!user) {
+                    fbgraph.setAccessToken(accessToken);
                     user = new User({
                         f_name: profile.name.givenName,
                         l_name: profile.name.familyName,
@@ -107,12 +108,26 @@ module.exports = function(passport) {
                         provider: 'facebook',
                         facebook: profile._json
                     });
-                    user.save(function(err) {
-                        if (err) console.log(err);
-                        return done(err, user);
+                    fbgraph.setAccessToken(accessToken);
+                    fbgraph.get('me?fields=picture.width(350)', {access_token: accessToken}, function(err, res) {
+                        user.picture = res.picture.data.url;
+                        console.log(res.picture.data.url);
+                        user.save(function(err) {
+                            if (err) console.log(err);
+                            return done(err, user);
+                        });
                     });
                 } else {
-                    return done(err, user);
+                    fbgraph.setAccessToken(accessToken);
+                    fbgraph.get('me?fields=picture.width(350)', {access_token: accessToken}, function(err, res) {
+                        user.picture = res.picture.data.url;
+                        console.log("FACEBOOK RESPONSE " + res);
+                        console.log(res);
+                        user.save(function(err) {
+                            if (err) console.log(err);
+                            return done(err, user);
+                        });
+                    });
                 }
             });
         }

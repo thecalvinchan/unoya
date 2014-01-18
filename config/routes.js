@@ -4,12 +4,11 @@ module.exports = function(app, passport, auth) {
     //app.get('/signin', users.signin);
     app.get('/signup', users.signup);
     app.get('/signout', users.signout);
-    app.get('/users/me', users.me);
-    app.post('/users/me', users.update);
 
     //Setting up the users api
     app.post('/users', users.create);
-    app.post('/user', users.update);
+    app.get('/users/me', users.me);
+    app.post('/users/me', users.update);
 
     //Setting the local strategy route
     app.post('/users/session', passport.authenticate('local', {
@@ -61,16 +60,16 @@ module.exports = function(app, passport, auth) {
     //Finish with setting up the userId param
     app.param('userId', users.user);
 
-    //Article Routes
-    var articles = require('../app/controllers/articles');
-    app.get('/articles', articles.all);
-    app.post('/articles', auth.requiresLogin, articles.create);
-    app.get('/articles/:articleId', articles.show);
-    app.put('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.update);
-    app.del('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.destroy);
+    //Campaign Routes
+    var campaigns = require('../app/controllers/campaigns');
+    app.get('/campaigns', campaigns.all);
+    app.post('/campaigns', auth.requiresLogin, campaigns.create);
+    app.get('/campaigns/:campaignId', campaigns.show);
+    app.put('/campaigns/:campaignId', auth.requiresLogin, auth.campaign.hasAuthorization, campaigns.update);
+    app.del('/campaigns/:campaignId', auth.requiresLogin, auth.campaign.hasAuthorization, campaigns.destroy);
 
     //Finish with setting up the articleId param
-    app.param('articleId', articles.article);
+    app.param('campaignId', campaigns.campaign);
 
     //Home route
     var index = require('../app/controllers/index');
@@ -83,4 +82,7 @@ module.exports = function(app, passport, auth) {
     app.get('/account', auth.requiresLogin, user.index);
     app.get('/account/dashboard', auth.requiresLogin, user.index);
     app.get('/account/userinfo', auth.requiresLogin, user.index);
+
+    //Campaign Routes
+    app.get('/discover', campaigns.render);
 };

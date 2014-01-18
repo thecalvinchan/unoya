@@ -1,0 +1,10 @@
+/* line 3, ../../scss/campaigns.scss */
+.campaign-thumb {
+  height: 200px;
+  overflow: hidden;
+}
+
+/* line 7, ../../scss/campaigns.scss */
+.campaign-thumb img {
+  width: 100%;
+}
