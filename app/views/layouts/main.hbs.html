@@ -24,10 +24,10 @@
                         <ul class="right">
                             <li class="avatar-thumb"><img src="/img/test-pic.jpg"></li>
                             <li class="has-dropdown">
-                                <a href="#">{{user.username}}</a>
+                                <a>{{user.username}}</a>
                                 <ul class="dropdown">
-                                    <li><a href="/account/dashboard">Dashboard</a></li>
-                                    <li><a href="/account/userinfo">Edit Profile</a></li>
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#settings">Edit Profile</a></li>
                                     <li class="divider"></li>
                                     <li><a href="/signout">Log Out</a></li>
                                 </ul>
@@ -68,10 +68,12 @@
     <script src="/js/nav.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="/lib/angular-resource/angular-resource.js"></script>
     <script src="/js/angular/init.js"></script>
     <script src="/js/angular/app.js"></script>
     <script src="/js/angular/config.js"></script>
     <script src="/js/angular/services/user.js"></script>
-    <script src="/js/angular/controllers/user.js"></script>
+    <script src="/js/angular/controllers/user/dashboard.js"></script>
+    <script src="/js/angular/controllers/user/settings.js"></script>
 </body>
 </html>

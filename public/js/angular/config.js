@@ -37,11 +37,11 @@ angular.module('unoya.user').config(['$routeProvider',
         when('/settings', {
             templateUrl: '/views/user/settings.html'
         }).
-        when('/account', {
+        when('/', {
             templateUrl: '/views/user/dashboard.html'
         }).
         otherwise({
-            redirectTo: '/account'
+            redirectTo: '/'
         });
     }
 ]);
@@ -49,7 +49,7 @@ angular.module('unoya.user').config(['$routeProvider',
 //Setting HTML5 Location Mode
 angular.module('unoya.public').config(['$locationProvider',
     function($locationProvider) {
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix("!");
     }
 ]);

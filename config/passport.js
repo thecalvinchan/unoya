@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
     GitHubStrategy = require('passport-github').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = mongoose.model('User'),
+    fbgraph = require('fbgraph');
     config = require('./config');
 
 console.log(config.facebook.clientID);
@@ -89,8 +90,7 @@ module.exports = function(passport) {
             callbackURL: config.facebook.callbackURL
         },
         function(accessToken, refreshToken, profile, done) {
-            console.log(accessToken);
-            console.log(refreshToken);
+            console.log("ACCESS_TOKEN " +  accessToken);
             User.findOne({
                 'facebook.id': profile.id
             }, function(err, user) {
