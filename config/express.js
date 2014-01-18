@@ -23,7 +23,7 @@ module.exports = function(app, passport, db) {
     }));
 
     //Setting the fav icon and static folder
-    app.use(express.favicon());
+    app.use(express.favicon('/public/img/icons/favicon.ico'));
     //Setting the directory for static foundation files
     app.use('/bower_components', express.static(config.root + '/bower_components'));
     //All other public files fall through to the public folder
