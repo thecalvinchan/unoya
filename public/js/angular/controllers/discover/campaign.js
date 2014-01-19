@@ -60,7 +60,7 @@ angular.module('unoya').controller('CampaignController', ['$scope', '$routeParam
                 }
                 $scope.follow = function() {
                     if(!user.following) {
-                        window.location = "/?login=false";
+                        window.location = "/#!/signin?login=false";
                     }
                     if ($scope.following) {
                         //alert('Already following 1');
