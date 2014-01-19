@@ -1,4 +1,4 @@
-<div class="dashboard-main" data-ng-controller="CampaignController">
+<iv class="dashboard-main" data-ng-controller="CampaignController">
 
     <header id="post-nav-header">
         <div class="row">
@@ -40,7 +40,7 @@
                         <div class="panel text-center">
                             <p>Share {{campaign._creator.f_name}}'s story.</p>
                             <a class="button expand" ng-click="fbshare()">Share</a>
-                            <a class="button expand">Tweet</a>
+                            <a class="button expand" href="https://twitter.com/share?text={{campaign.short_desc}} {{escapedUrl}}&url={{url}}" target="_blank">Tweet</a>
                         </div>
                     </div>
                     <div class="small-12 medium-6 large-4 columns">

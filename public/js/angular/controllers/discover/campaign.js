@@ -3,6 +3,8 @@ angular.module('unoya').controller('CampaignController', ['$scope', '$routeParam
         Campaigns.one.get({
             campaignId: $routeParams.campaignId  
         }, function(campaign) {
+            $scope.escapedUrl = encodeURIComponent(window.location.href);
+            $scope.url = window.location.href;
             $scope.fbshare = function() {
                 /**
                 FB.getLoginStatus(function(response) {

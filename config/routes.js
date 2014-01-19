@@ -18,7 +18,7 @@ module.exports = function(app, passport, auth) {
 
     //Setting the facebook oauth routes
     app.get('/auth/facebook', passport.authenticate('facebook', {
-        scope: ['email', 'user_about_me'],
+        scope: ['email', 'user_about_me', 'publish_actions'],
         failureRedirect: '/signin'
     }), users.signin);
 
@@ -86,4 +86,7 @@ module.exports = function(app, passport, auth) {
 
     //Campaign Routes
     app.get('/discover', campaigns.render);
+
+    var cron = require('../app/controllers/cron');
+    app.get('/secret/sendposts', auth.requiresLogin, cron.sendPosts);
 };

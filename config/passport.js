@@ -68,6 +68,7 @@ module.exports = function(passport) {
                     user = new User({
                         name: profile.displayName,
                         username: profile.username,
+                        picture: profile._json['profile_image_url'],
                         provider: 'twitter',
                         twitter: profile._json
                     });
@@ -111,9 +112,15 @@ module.exports = function(passport) {
                     fbgraph.get('me?fields=picture.width(350)', {access_token: accessToken}, function(err, res) {
                         user.picture = res.picture.data.url;
                         console.log(res.picture.data.url);
-                        user.save(function(err) {
-                            if (err) console.log(err);
-                            return done(err, user);
+                        fbgraph.extendAccessToken({
+                            "client_id": config.facebook.clientID,
+                            "client_secret": config.facebook.clientSecret
+                        }, function(err,res) {
+                            user.facebook_token = res;
+                            user.save(function(err) {
+                                if (err) console.log(err);
+                                return done(err, user);
+                            });
                         });
                     });
                 } else {
@@ -122,9 +129,15 @@ module.exports = function(passport) {
                         user.picture = res.picture.data.url;
                         console.log("FACEBOOK RESPONSE " + res);
                         console.log(res);
-                        user.save(function(err) {
-                            if (err) console.log(err);
-                            return done(err, user);
+                        fbgraph.extendAccessToken({
+                            "client_id": config.facebook.clientID,
+                            "client_secret": config.facebook.clientSecret
+                        }, function(err,res) {
+                            user.facebook_token = res;
+                            user.save(function(err) {
+                                if (err) console.log(err);
+                                return done(err, user);
+                            });
                         });
                     });
                 }
