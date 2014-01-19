@@ -6,12 +6,12 @@ module.exports = {
     facebook: {
         clientID: process.env.FB_APP_ID,
         clientSecret: process.env.FB_APP_SECRET,
-        callbackURL: "http://localhost:3000/auth/facebook/callback"
+        callbackURL: "http://www.unoya.org/auth/facebook/callback"
     },
     twitter: {
         clientID: process.env.TWT_CLIENT_ID,
         clientSecret: process.env.TWT_CLIENT_SECRET,
-        callbackURL: "http://localhost:3000/auth/twitter/callback"
+        callbackURL: "http://www.unoya.org/auth/twitter/callback"
     },
     github: {
         clientID: "APP_ID",
