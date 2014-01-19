@@ -32,6 +32,7 @@ var UserSchema = new Schema({
     salt: String,
     facebook_token: {},
     twitter_token: {},
+    dwolla_token: {},
     facebook: {},
     dwolla: {},
     twitter: {},

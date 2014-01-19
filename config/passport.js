@@ -95,6 +95,27 @@ module.exports = function(passport) {
             });
         }
     ));
+    
+    passport.use(new DwollaStrategy({
+        clientID: config.dwolla.clientID,
+        clientSecret: config.dwolla.clientSecret,
+        callbackURL: config.dwolla.callbackURL
+    }, function(accessToken, refreshToken, profile, done) {
+        User.findOne({
+            'email': profile.email
+        }, function(err, user) {
+            if (err) {
+                return done(err);
+            } if (!user) {
+            } else {
+                user.dwolla_token = accessToken;
+                user.save(function(err) {
+                    if(err) console.log(err);
+                    return done(err,user);
+                });
+            }
+        });    
+    }));
 
     //Use facebook strategy
     passport.use(new FacebookStrategy({

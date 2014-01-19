@@ -26,6 +26,16 @@ module.exports = function(app, passport, auth) {
         failureRedirect: '/signin'
     }), users.authCallback);
 
+    //Setting the facebook oauth routes
+    app.get('/auth/dwolla', passport.authenticate('dwolla', {
+        scope: 'Send',
+        failureRedirect: '/signin'
+    }), users.signin);
+
+    app.get('/auth/dwolla/callback', passport.authenticate('dwolla', {
+        failureRedirect: '/signin'
+    }), users.authCallback);
+
     //Setting the github oauth routes
     app.get('/auth/github', passport.authenticate('github', {
         failureRedirect: '/signin'
