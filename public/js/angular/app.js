@@ -2,6 +2,7 @@
 
 angular.module('unoya.public',['ngRoute','unoya.system','unoya']);
 angular.module('unoya.user',['ngRoute','ngResource','unoya.system','unoya']);
+angular.module('unoya.admin',['ngRoute','ngResource','unoya.system','unoya']);
 angular.module('unoya.discover',['ngRoute','ngResource','ngSanitize','unoya']);
 
 angular.module('unoya',[]);

@@ -87,6 +87,8 @@ module.exports = function(app, passport, auth) {
     //Campaign Routes
     app.get('/discover', campaigns.render);
 
-    var cron = require('../app/controllers/cron');
-    app.get('/secret/sendposts', auth.requiresLogin, cron.sendPosts);
+    var admin = require('../app/controllers/admin');
+    app.get('/secret/newcampaign', auth.requiresLogin, auth.user.hasAdmin, admin.create);
+    app.get('/secret/sendposts', auth.requiresLogin, auth.user.hasAdmin, admin.sendPosts);
+    app.get('/secret/sendtweets', auth.requiresLogin, auth.user.hasAdmin, admin.sendTweets);
 };

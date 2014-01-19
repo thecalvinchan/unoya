@@ -46,11 +46,26 @@ angular.module('unoya.user').config(['$routeProvider',
     }
 ]);
 
+angular.module('unoya.admin').config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+        when('/', {
+            templateUrl: '/views/admin/create-campaign.html'
+        }).
+        otherwise({
+            redirectTo: '/'
+        });
+    }
+]);
+
 angular.module('unoya.discover').config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/campaigns', {
             templateUrl: '/views/discover/campaigns.html'
+        }).
+        when('/campaign/suggest', {
+            templateUrl: '/views/discover/suggest.html'
         }).
         when('/campaign/:campaignId', {
             templateUrl: '/views/discover/campaign.html'

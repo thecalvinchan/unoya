@@ -13,7 +13,7 @@ angular.module('unoya.user').controller('DashboardController', ['$scope', '$loca
                             id : data[i]._id,
                             name : data[i]._creator.f_name + ' ' + data[i]._creator.l_name,
                             description : data[i].short_desc,
-                            image : data[i]._creator.picture
+                            image : data[i].feature.picture
                         });
                     };
                 }

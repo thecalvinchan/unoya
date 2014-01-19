@@ -42,6 +42,8 @@
                     {{#if user}}
                     <section class="top-bar-section">
                         <ul class="right">
+                            <li><a href="/discover">Campaigns</a></li>
+                            <li><a href="/discover#/campaign/52db66357fd5d1f7a593c7d1">About Us</a></li>
                             <li class="avatar-thumb"><img src="{{user.picture}}"></li>
                             <li class="has-dropdown">
                                 <a>{{user.username}}</a>
@@ -67,13 +69,12 @@
         <div class="row">
             <div class="large-12 columns">
                 <ul class="inline-list right">
-                    <li>Unoya &copy; 2013</li>
+                    <li><a href="/">Unoya &copy; 2013</a></li>
                 </ul>
                 <ul class="inline-list left">
-                    <li>About</li>
-                    <li>Start a Campaign</li>
-                    <li>Privacy</li>
-                    <li>Terms</li>
+                    <li><a href="/discover#/campaigns">Campaigns</a></li>
+                    <li><a href="/discover#/campaign/suggest">Start a Campaign</a></li>
+                    <li><a href="/discover#/campaign/52db66357fd5d1f7a593c7d1">About</a></li>
                 </ul>
             </div>
         </div>
@@ -97,6 +98,7 @@
     <script src="/js/angular/services/campaigns.js"></script>
     <script src="/js/angular/controllers/user/dashboard.js"></script>
     <script src="/js/angular/controllers/user/settings.js"></script>
+    <script src="/js/angular/controllers/admin/create-campaign.js"></script>
     <script src="/js/angular/controllers/discover/campaigns.js"></script>
     <script src="/js/angular/controllers/discover/campaign.js"></script>
 </body>

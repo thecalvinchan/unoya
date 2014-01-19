@@ -28,7 +28,6 @@ section, footer {
     top: 0;
     width: 100%;
     z-index: 2; 
-    padding: 5px 0;
 }
 #navbar section {
     padding: 0;
@@ -50,14 +49,14 @@ ul.title-area {
 }
 
 .avatar-thumb {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     overflow: hidden;
     background-color: inherit;
 }
 
 .avatar-thumb img {
-    width: 40px;
+    width: 45px;
 }
 
 .avatar-full img {
@@ -69,7 +68,6 @@ ul.title-area {
 }
 
 footer {
-    background-color: #444;
     color: #DDD;
     padding-bottom: 0;
 }

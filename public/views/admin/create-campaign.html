@@ -1,0 +1,60 @@
+<div data-ng-controller="CreateCampaignController">
+
+    <header id="post-nav-header">
+        <div class="row">
+            <div id="title" class="small-12 columns">
+                <h2>{{title}} <small>{{subtitle}}</small></h2>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard-main">
+            <div class="row">
+                    <div class="small-12 large-8 columns">
+                    <section data-alert class="alert-box {{message.type}}" ng-if="message">
+                        {{message.description}}
+                    </section>
+                    <form ng-submit="create()">
+                        <div class="row">
+                            <div class="small-12 medium-6 columns">
+                                <label>Title</label>
+                                <input type="text" name="f_name" ng-model="campaign.title">
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <label>Creator ID</label>
+                                <input type="text" name="creator" ng-model="campaign._creator">
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <label>Diagnosis</label>
+                                <input type="text" name="diagnosis" ng-model="campaign.diagnosis">
+                            </div>
+                            <div class="small-12 columns">
+                                <label>Short Description</label>
+                                <input type="text" name="short_desc" ng-model="campaign.short_desc">
+                            </div>
+                            <div class="small-12 columns">
+                                <label>Full Description</label>
+                                <input type="text" name="full_desc" ng-model="campaign.full_desc">
+                            </div>
+                            <div class="small-12 columns">
+                                <label>Content</label>
+                                <textarea name="content" ng-model="campaign.content"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-12 medium-6 columns">
+                                <button type="submit" class="button expand">Save Changes</button>
+                            </div>
+                            <hr>
+                        </div>
+                </div>
+                <div class="small-12 large-4 columns">
+                    <label>Youtube Embed</label>
+                    <input type="text" name="youtube_link" ng-model="campaign.feature.youtube">
+                    <label>Featured Picture</label>
+                    <input type="text" name="featured_pic" ng-model="campaign.feature.picture">
+                </div>
+                </form>
+            </div>
+    </section>
+</div>

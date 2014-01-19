@@ -9,7 +9,8 @@ header {
     z-index: 2;
 }
 
-header h1.subheader {
+
+header h1.subheader, header h2.subheader {
     color: #FFF;
 }
 
@@ -27,4 +28,9 @@ header h1.subheader {
 }
 #signup p.subheader{
     font-size: 14px;
+}
+
+.page {
+    margin-top: 100px;
+    height: 300px;
 }

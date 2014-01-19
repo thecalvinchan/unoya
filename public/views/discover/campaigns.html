@@ -23,12 +23,15 @@
 
                 <hr>
                 -->
+                <br>
+                <h4 class="text-center subheader">Whoops! Looks like there aren't very many campaigns yet! We're working as hard as we can to get in touch with support groups and cancer organizations to reach out to cancer patients around the country. Please keep checking back as we kickstart our way to changing the world.</h4>
+                <br>
 
                 <h3>Recent Campaigns</h3>
                 <div id="campaigns" class="row">
                     <div class="small-12 medium-6 large-4 columns campaign" ng-repeat="campaign in campaigns">
                         <div class="row">
-                            <a href="#/campaign/{{campaign._id}}"><div class="small-3 medium-12 columns campaign-thumb"><img src="{{campaign._creator.picture}}"></div></a>
+                            <a href="#/campaign/{{campaign._id}}"><div class="small-3 medium-12 columns campaign-thumb"><img src="{{campaign.feature.picture}}"></div></a>
                             <div class="small-9 medium-12 columns">
                                 <h4><a href="#/campaign/{{campaign._id}}">{{campaign._creator.f_name}} {{campaign._creator.l_name}}</a></h4>
                                 <p class="subheader">{{campaign.short_desc}}</p>

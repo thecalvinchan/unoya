@@ -22,14 +22,18 @@ exports.campaign = function(req, res, next, id) {
  * Create a article
  */
 exports.create = function(req, res) {
-    var campaign = new Campaign(req.body);
+    var campaign = new Campaign(req.campaign);
     campaign._creator = req.user;
+    console.log(campaign);
+    
+    campaign = _.extend(campaign, req.body);
+    console.log(campaign);
 
     campaign.save(function(err) {
         if (err) {
+            console.log(err);
             return res.send('/#signin', {
-                errors: err.errors,
-                article: article
+                errors: err.errors
             });
         } else {
             res.jsonp(campaign);

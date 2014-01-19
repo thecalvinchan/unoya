@@ -18,6 +18,12 @@ exports.user = {
             return res.send(401, 'User is not authorized');
         }
         next();
+    },
+    hasAdmin: function(req, res, next) {
+        if (req.user.email != 'calvin.chan.h@gmail.com') {
+            return res.send(401, 'User is not an administrator');
+        }
+        next();
     }
 };
 

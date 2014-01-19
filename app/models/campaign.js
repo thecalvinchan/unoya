@@ -50,7 +50,8 @@ var CampaignSchema = new Schema({
     donations: {
         type: Number,
         default: 0,
-    }
+    },
+    feature: {}
 });
 
 /**

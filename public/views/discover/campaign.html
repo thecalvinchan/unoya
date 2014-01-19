@@ -26,14 +26,22 @@
                         <li class="description">Total Followers</li>
                         <li class="price">{{campaign._followers.length}}</li>
                         <li class="description">Donations to Date</li>
-                        <li class="price">{{campaign.donations}}</li>
+                        <li class="price">${{campaign.donations}}</li>
                     </ul>
             </div>
             <div class="small-12 medium-8 large-9 large-pull-3 medium-pull-4 columns">
                 <h1>{{name}} <small>is fighting against {{campaign.diagnosis}}.</small></h1>
                 <h3 class="subheader" ng-bind-html="campaign.full_desc"></h3>
+                <!--
                 <div class="flex-video">
                     <iframe width="560" height="315" src="//www.youtube.com/embed/zbkinvcaqUg" frameborder="0" allowfullscreen></iframe>
+                </div>
+                -->
+                <div class="row">
+                    <div class="small-12 columns">
+                        <img src="{{campaign.feature.picture}}">
+                        <br><br>
+                    </div>
                 </div>
                 <div class="row call-to-action">
                     <div class="small-12 medium-6 large-4 columns">
