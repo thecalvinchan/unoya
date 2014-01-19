@@ -1,16 +1,16 @@
 module.exports = {
-    db: "mongodb://localhost/mean",
+    db: process.env.MONGOHQ_URL,
     app: {
-        name: "MEAN - A Modern Stack - Production"
+        name: "Unoya - Let us think beautifully"
     },
     facebook: {
-        clientID: "APP_ID",
-        clientSecret: "APP_SECRET",
+        clientID: process.env.FB_APP_ID,
+        clientSecret: process.env.FB_APP_SECRET,
         callbackURL: "http://localhost:3000/auth/facebook/callback"
     },
     twitter: {
-        clientID: "CONSUMER_KEY",
-        clientSecret: "CONSUMER_SECRET",
+        clientID: process.env.TWT_CLIENT_ID,
+        clientSecret: process.env.TWT_CLIENT_SECRET,
         callbackURL: "http://localhost:3000/auth/twitter/callback"
     },
     github: {
