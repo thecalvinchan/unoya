@@ -96,6 +96,7 @@ module.exports = function(passport) {
         }
     ));
     
+/**
     passport.use(new DwollaStrategy({
         clientID: config.dwolla.clientID,
         clientSecret: config.dwolla.clientSecret,
@@ -116,6 +117,7 @@ module.exports = function(passport) {
             }
         });    
     }));
+**/
 
     //Use facebook strategy
     passport.use(new FacebookStrategy({
