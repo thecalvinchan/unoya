@@ -68,16 +68,28 @@ module.exports = function(passport) {
                     user = new User({
                         name: profile.displayName,
                         username: profile.username,
+                        email: profile.username+'@twitter.com',
                         picture: profile._json['profile_image_url'],
                         provider: 'twitter',
-                        twitter: profile._json
+                        twitter: profile._json,
+                        twitter_token: {
+                            access_token: token,
+                            access_token_secret: tokenSecret
+                        }
                     });
                     user.save(function(err) {
                         if (err) console.log(err);
                         return done(err, user);
                     });
                 } else {
-                    return done(err, user);
+                    user.twitter_token = {
+                        access_token: token,
+                        access_token_secret: tokenSecret
+                    };
+                    user.save(function(err) {
+                        if (err) console.log(err);
+                        return done(err, user);
+                    });
                 }
             });
         }

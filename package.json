@@ -39,6 +39,7 @@
         "grunt": "latest",
         "grunt-cli": "latest",
         "grunt-env": "latest",
-        "fbgraph": "latest"
+        "fbgraph": "latest",
+        "twit": "latest"
     }
 }
