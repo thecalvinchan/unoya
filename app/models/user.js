@@ -33,6 +33,7 @@ var UserSchema = new Schema({
     facebook_token: {},
     twitter_token: {},
     facebook: {},
+    dwolla: {},
     twitter: {},
     github: {},
     google: {}

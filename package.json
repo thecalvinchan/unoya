@@ -30,6 +30,7 @@
         "passport-twitter": "latest",
         "passport-github": "latest",
         "passport-google-oauth": "latest",
+        "passport-dwolla": "latest",
         "lodash": "latest",
         "async": "latest",
         "view-helpers": "latest",
