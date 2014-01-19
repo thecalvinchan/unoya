@@ -1,5 +1,11 @@
 angular.module('unoya').controller('CampaignController', ['$scope', '$routeParams', '$sanitize','Campaigns','User',
     function ($scope, $routeParams, $sanitize, Campaigns, User) {
+        $scope.donate5 = function() {
+            $('.d-btn-text').first().click();
+        };
+        $scope.donate10 = function() {
+            $('.d-btn-text').eq(1).click();
+        };
         Campaigns.one.get({
             campaignId: $routeParams.campaignId  
         }, function(campaign) {
