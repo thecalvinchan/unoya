@@ -43,7 +43,11 @@ angular.module('unoya').controller('CampaignController', ['$scope', '$routeParam
             $scope.content = campaign.content;
             //$scope.followers = campaign._followers.length;
             User.get(function(user) {
-                var following = user.following.indexOf(campaign._id);
+                if (user.following) {
+                    var following = user.following.indexOf(campaign._id);
+                } else {
+                    var following = -1;
+                }
                 console.log(following);
                 if (following != -1) {
                     $scope.following = true;
@@ -55,6 +59,9 @@ angular.module('unoya').controller('CampaignController', ['$scope', '$routeParam
                     $scope.following = false;
                 }
                 $scope.follow = function() {
+                    if(!user.following) {
+                        window.location = "/?login=false";
+                    }
                     if ($scope.following) {
                         //alert('Already following 1');
                         $scope.following = true;
