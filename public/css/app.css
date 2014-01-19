@@ -7837,14 +7837,19 @@ nav.fixed {
   color: #DDD;
 }
 
+/* line 102, ../../scss/app.scss */
+.d-btn, .d-btn-simple {
+  display: none !important;
+}
+
 @media only screen and (min-width: 64.063em) {
-  /* line 106, ../../scss/app.scss */
+  /* line 107, ../../scss/app.scss */
   nav.fixed {
     min-width: 0;
     width: auto;
   }
 
-  /* line 110, ../../scss/app.scss */
+  /* line 111, ../../scss/app.scss */
   .sub-nav dd {
     border-bottom: none;
     border-left: 2px solid #888;
@@ -7852,7 +7857,7 @@ nav.fixed {
     float: none;
   }
 
-  /* line 116, ../../scss/app.scss */
+  /* line 117, ../../scss/app.scss */
   .sub-nav dd.active-section {
     border-bottom: none;
     border-left: 2px solid #DDD;
