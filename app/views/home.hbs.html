@@ -15,6 +15,15 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=519672091465468";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     <header id="header">
         <div class="row">
             <h2 class="subheader"><img src="/img/unoya_logo_transparent.png" width=50>unoya.</h2>
@@ -40,6 +49,10 @@
                 <h2>How it works</h2>
                 <p>Every month, we will feature a few cancer patients that have unique dreams and aspirations, dreams that can come true with the help of a large network of support. With your permission, we will share the story of the patients you follow on your social media networks, in hopes of increasing the support network of the patient and raising awareness for that particular disease. For example, we may come across a patient who wants to meet her favorite author. Through mass tweeting and facebook sharing, we can leverage the power of social media to get in touch with that author, and inform her of this patient's dream. We can develop an online network of support that may prove invaluable to cancer-fighters worldwide.</p>
                 <p>Find out more about Unoya <a href="/discover#/campaign/52dba23ce01d8808009f8849">here.</a></p>
+                <div class="fb-like" data-href="http://www.unoya.org" data-width="290" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <br><br>
+                <a href="https://twitter.com/_unoya" class="twitter-follow-button" data-show-count="false">Follow @_unoya</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </div>
         </div>
     </section>
