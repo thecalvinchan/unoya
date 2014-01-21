@@ -2,7 +2,7 @@
 angular.module('unoya').factory('User', ['$resource',
     function($resource) {
         var _this = this;
-        var user = $resource('users/me', null, {
+        var user = $resource('/users/me', null, {
             update : {
                 method : 'POST'
             }
