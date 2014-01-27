@@ -66,10 +66,15 @@ exports.create = function(req, res) {
                     message = 'Please fill all the required fields';
             }
 
-            return res.render('users/signup', {
+            //return res.render('users/signup', {
+            //    message: message,
+            //    user: user
+            //});
+            res.send(400, {
                 message: message,
                 user: user
             });
+            return;
         }
         req.logIn(user, function(err) {
             if (err) return next(err);
