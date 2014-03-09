@@ -1,14 +1,15 @@
 module.exports = function(app, passport, auth) {
     //User Routes
+    var index = require('../app/controllers/index');
     var users = require('../app/controllers/users');
     //app.get('/signin', users.signin);
-    app.get('/signup', users.signup);
     app.get('/signout', users.signout);
 
     //Setting up the users api
     app.post('/users', users.create);
     app.get('/users/me', users.me);
     app.post('/users/me', users.update);
+    app.get('/users/password', users.changePassword);
 
     //Setting the local strategy route
     app.post('/users/session', passport.authenticate('local', {
@@ -20,40 +21,18 @@ module.exports = function(app, passport, auth) {
     app.get('/auth/facebook', passport.authenticate('facebook', {
         scope: ['email', 'user_about_me', 'publish_actions'],
         failureRedirect: '/signin'
-    }), users.signin);
+    }), index.render);
 
     app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-        failureRedirect: '/signin'
-    }), users.authCallback);
-
-    //Setting the github oauth routes
-    app.get('/auth/github', passport.authenticate('github', {
-        failureRedirect: '/signin'
-    }), users.signin);
-
-    app.get('/auth/github/callback', passport.authenticate('github', {
         failureRedirect: '/signin'
     }), users.authCallback);
 
     //Setting the twitter oauth routes
     app.get('/auth/twitter', passport.authenticate('twitter', {
         failureRedirect: '/signin'
-    }), users.signin);
+    }), index.render);
 
     app.get('/auth/twitter/callback', passport.authenticate('twitter', {
-        failureRedirect: '/signin'
-    }), users.authCallback);
-
-    //Setting the google oauth routes
-    app.get('/auth/google', passport.authenticate('google', {
-        failureRedirect: '/signin',
-        scope: [
-            'https://www.googleapis.com/auth/userinfo.profile',
-            'https://www.googleapis.com/auth/userinfo.email'
-        ]
-    }), users.signin);
-
-    app.get('/auth/google/callback', passport.authenticate('google', {
         failureRedirect: '/signin'
     }), users.authCallback);
 
@@ -73,16 +52,14 @@ module.exports = function(app, passport, auth) {
     app.param('campaignId', campaigns.campaign);
 
     //Home route
-    var index = require('../app/controllers/index');
     app.get('/', index.render);
     app.get('/signin', index.render);
 
     //Account routes
-    var user = require('../app/controllers/user');
     var auth = require('./middlewares/authorization');
-    app.get('/account', auth.requiresLogin, user.index);
-    app.get('/account/dashboard', auth.requiresLogin, user.index);
-    app.get('/account/userinfo', auth.requiresLogin, user.index);
+    app.get('/account', auth.requiresLogin, users.index);
+    app.get('/account/dashboard', auth.requiresLogin, users.index);
+    app.get('/account/userinfo', auth.requiresLogin, users.index);
 
     //Campaign Routes
     app.get('/discover', campaigns.render);

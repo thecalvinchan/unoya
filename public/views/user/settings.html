@@ -42,27 +42,33 @@
                             <hr>
                         </div>
                     </form>
+                    <!--
                     <div class="row">
                         <div class="small-12 medium-6 columns">
                             <a class="button expand">Connect with Facebook</a>
+                            <a class="button expand alert" ng-if="user.facebook">Disconnect Facebook</a>
                         </div>
                         <div class="small-12 medium-6 columns">
                             <a class="button expand">Connect with Twitter</a>
+                            <a class="button expand alert" ng-if="user.twitter">Disconnect Twitter</a>
                         </div>
                         <hr>
                         <div class="small-12 medium-6 medium-centered columns">
-                            <a class="button expand">Change Password</a>
+                            <a class="button expand" ng-if="localProvider">Change Password</a>
                         </div>
                     </div>
+                    -->
                 </div>
                 <div class="small-12 large-4 columns text-center"> 
                     <label>Avatar</label>
                     <img src="{{user.picture}}">
+                    <!--
                     <ul class="side-nav text-center">
                         <li><a href="#">Upload Picture...</a></li>
                         <li><a href="#">Use Facebook Profile Picture</a></li>
                         <li><a href="#">Use Twitter Profile Picture</a></li>
                     </ul>
+                    -->
                 </div>
             </div>
     </section>

@@ -4,6 +4,9 @@ angular.module('unoya.user').controller('SettingsController', ['$scope', '$locat
         $scope.subtitle = 'User Information';
         User.get(function(user){
             $scope.user = user;
+            if (user.provider == 'local') {
+                $scope.localProvider = true;
+            }
         });
         $scope.update = function() {
             var user = $scope.user;

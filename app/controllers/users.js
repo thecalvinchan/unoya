@@ -5,6 +5,12 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User'),
     _ = require('lodash');
 
+exports.index = function(req, res) {
+    res.render('user', {
+        user: req.user, 
+    });
+};
+
 /**
  * Auth callback
  */
@@ -12,25 +18,6 @@ exports.authCallback = function(req, res, next) {
     res.redirect('/');
 };
 
-/**
- * Show login form
- */
-exports.signin = function(req, res) {
-    res.render('users/signin', {
-        title: 'Signin',
-        message: req.flash('auth-error')
-    });
-};
-
-/**
- * Show sign up form
- */
-exports.signup = function(req, res) {
-    res.render('users/signup', {
-        title: 'Sign up',
-        user: new User()
-    });
-};
 
 /**
  * Logout
@@ -98,6 +85,11 @@ exports.update = function(req, res) {
         res.jsonp(user);
     });
 };
+
+exports.changePassword = function(req, res) {
+    var user = req.user;
+    res.jsonp(user);
+}
 
 /**
  * Send User
